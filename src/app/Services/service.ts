@@ -8,9 +8,9 @@ import { Customer, Product, Order } from '../Modals/Orders';
     providedIn: 'root'
   })
   export class OrderService {
-    orderUrl = 'https://localhost:7074/api/Order';
-    customerUrl = 'https://localhost:7074/api/Customer';
-    productUrl = 'https://localhost:7074/api/Product';
+    orderUrl = 'https://diploma-challenge-api.azurewebsites.net/api/Order';
+    customerUrl = 'https://diploma-challenge-api.azurewebsites.net/api/Customer';
+    productUrl = 'https://diploma-challenge-api.azurewebsites.net/api/Product';
   
     constructor(private http:HttpClient) { }
 
@@ -37,13 +37,15 @@ import { Customer, Product, Order } from '../Modals/Orders';
     }
     
     deleteOrder(val:any){
-        return this.http.delete(this.orderUrl+'/delete/'+val);
+        console.log(val)
+        return this.http.delete(this.orderUrl+'/'+val);
     }
 
     //update orders
     updateCard(orderID:number, custID:string, prodID:string, orderDate:string, quantity:number, shipDate:string, shipMode:string) {
         
-        
+        console.log(orderID)
+        console.log(custID)
         const params = new HttpParams()
         .append('OrderID', orderID)
         .append('CustID',custID)

@@ -73,11 +73,12 @@ export class MainComponent implements OnInit {
       this.service.addOrder(this.custID, this.prodID, this.orderDate, this.quantity, this.shipDate, this.shipMode)
       .subscribe({
         next:(resp:any) => console.log(resp),
-        error:(err:any) => console.log(err)
+        error:(err:any) => console.log(err),
+        complete:() => this.refreshOrdersList()
         
       }
       )
-      this.refreshOrdersList();
+      
   }
   getCustomerInfo(){    
     this.service.getAllCustomers().subscribe(data=>{               
@@ -94,12 +95,17 @@ export class MainComponent implements OnInit {
     })
   }
 
-  deleteClick() {
-
+  deleteClick(item:any) {
+    console.log(item.orderID)
+    this.service.deleteOrder(item.orderID).subscribe(data=>{          
+      this.refreshOrdersList();
+    })
   }
   editClick(item:any) {
+    
+    
     this.order=item;
-    console.log(this.order);
+    
   }
   updateOrder(order: Order){ 
         

@@ -1,4 +1,4 @@
-<h2>A basic HTML table</h2>
+<h2>Orders</h2>
 <div>
     <div class="order-table">
     <table class="table-orders"  >
@@ -21,7 +21,7 @@
         <td (click)="editClick(dataItem)" name="quantity">{{dataItem.quantity}}</td>
         <td (click)="editClick(dataItem)" name="shipDate">{{dataItem.shipDate}}</td>
         <td (click)="editClick(dataItem)" name="shipMode">{{dataItem.shipMode}}</td>
-        <td><button (click)="deleteClick()">Delete</button></td>
+        <td><button (click)="deleteClick(dataItem)">Delete</button></td>
     
         
     </tr>
@@ -80,7 +80,7 @@
 
 
 <hr>
-<h2>Update Order</h2>
+<h2>Update Order (Click on an order to update)</h2>
 <div class="update-order">
     <div class="order-form">
         <form>          
@@ -89,7 +89,7 @@
             <div class="form-group form-group-inline">
             <div>
                 <label for="">Order ID</label>
-                <input value="{{order.orderID}}" type="text" name="Order ID" [(ngModel)]="order.orderID">
+                <input value="{{orderID}}" type="text" name="Order ID" [(ngModel)]="order.orderID">
             </div> 
             <div>
               <label for="">Order Date</label>
@@ -97,7 +97,7 @@
             </div>  
             <div>
                 <label for="">Quantity</label>
-                <input value="{{order.quantity}}" type="text" name="Quantity" [(ngModel)]="order.quantity">
+                <input value="{{order.quantity}" type="text" name="Quantity" [(ngModel)]="order.quantity">
             </div>
             <div>
                 <label for="">Ship Date</label>
