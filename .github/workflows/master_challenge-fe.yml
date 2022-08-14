@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'challenge-fe'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_185A4CC26E2F48C0BC5CA74F7791D7F2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BA390700EBC84087AE191B0385564B51 }}
           package: .
