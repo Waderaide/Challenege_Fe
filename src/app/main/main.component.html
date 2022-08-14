@@ -90,7 +90,13 @@
             <div>
                 <label for="">Order ID</label>
                 <input value="{{orderID}}" type="text" name="Order ID" [(ngModel)]="order.orderID">
-            </div> 
+            </div>
+            <div class="form-group">
+                <label for="">Select Product</label>
+                <select  #selection (change)="onSelectionProduct(selection.value)" name="selection-prod" [(ngModel)]="order.prodID">
+                <option *ngFor="let p of ProductsList" [value]="p.prodID">{{p.description_}}</option>
+                </select>
+                </div>
             <div>
               <label for="">Order Date</label>
               <input value="{{order.orderDate}}" type="text" name="Order Date" [(ngModel)]="order.orderDate">

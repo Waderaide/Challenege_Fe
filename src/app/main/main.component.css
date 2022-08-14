@@ -6,14 +6,15 @@
     
 }
 .order-table {
-    border:1px solid red;
+    border:3px solid black;
     width: 40%;
     float: left;
 }
 .add-order {
     width: 40%;
     float: right;
-    border:1px solid red;
+    border:3px solid black;
+    margin-right: 100px;
 }
 .update-order {
     margin-top: 40px;
